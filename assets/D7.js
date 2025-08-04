@@ -9,29 +9,37 @@ function stringheConcatenate(str1, str2) {
   const risultato = primiDue + ultimiTre;
   const maiuscolo = risultato.toUpperCase();
   console.log("Risultato in maiuscolo", maiuscolo);
-} /* ESERCIZIO 2 (for)
+}
+stringheConcatenate("daprocida", "sterno");
+/* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
-let dieciNum = [];
+
 function generaDieciNumeri() {
+  let dieciNum = [];
   for (let i = 0; i < 10; i++) {
     dieciNum.push(Math.floor(Math.random() * 101));
   }
   return dieciNum;
 }
-/*generaDieciNumeri();
-console.log("dieciNum", dieciNum);
+
+const dieciUscita = generaDieciNumeri();
+const dieciUscita2 = generaDieciNumeri();
+console.log("dieciNum", dieciUscita);
+console.log("dieciNum2", dieciUscita2);
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
-let pari = numeriPari();
+
 function numeriPari() {
-  const tuttiNumeri = dieciNum;
+  const tuttiNumeri = generaDieciNumeri();
+  console.log("tutti numeri", tuttiNumeri);
   const soloIPari = tuttiNumeri.filter((num) => num % 2 === 0); //ricordati che quei due "num" non sono modi di default di chimare gli elementi, lì devi chiamare gli elemnti di un array ma decidi tu come ogni volta
   return soloIPari; //ricordati sempre di mettere i default in questi casi
 }
-numeriPari();
+let pari = numeriPari();
+
 console.log("Solo numeri pari", pari);
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
